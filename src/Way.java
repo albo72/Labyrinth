@@ -6,8 +6,7 @@ public class Way {
     private final List<LinkedList> content;
     public Way(Labyrinth labyrinth, int x, int y) {
         Runner runner = new Runner();
-        SearherOfPossibleExits possibleExitsExits = new SearherOfPossibleExits();
-        List<Coordinates> exits = possibleExitsExits.search(labyrinth);
+        PossibleExits exits = new PossibleExits(labyrinth);
         List<Coordinates> listOfPreviousCoordinates = new ArrayList<>();
         LinkedList<Coordinates> steps = new LinkedList<>();
         List<LinkedList> way = new ArrayList<>();
@@ -28,8 +27,8 @@ public class Way {
             return "Выхода нет...";
         }
         if(content.size()==1){
-            return "Путь из указанной точки:" + content;
+            return "Путь из указанной точки по координатам (x:y):\n" + content;
         }
-        return "Есть несколько вариантов пути к выходу:\n" + content;
+        return "Есть несколько вариантов пути к выходу по координатам (x:y):\n" + content;
     }
 }
