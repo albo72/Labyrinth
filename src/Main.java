@@ -1,17 +1,18 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Labyrinth labyrinth = new Labyrinth("C:\\Users\\Alex\\Desktop\\Java\\Labyrinth\\src\\1.in");
+        Labyrinth labyrinth = new Labyrinth("C:\\Users\\Alex\\Desktop\\Java\\Labyrinth\\src\\2.in");
         Drawer drawer = new DrawerOfLabyrinth();
         drawer.draw(labyrinth);
         Searcher searcher = new SearherOfPossibleExits();
         System.out.println(searcher.search(labyrinth));
         Runner runner = new Runner();
-        Map<Integer,Integer> way = new HashMap<>();
-        runner.moveAndGetTheWay(5,3,labyrinth,way);
-//        System.out.println(runner.moveAndGetTheWay(7,1,labyrinth.getLabyrinth(),new HashMap<>()));
+        List<Coordinates> list = new ArrayList<>();
+        LinkedList<Coordinates> way = new LinkedList<>();
+        List<LinkedList> way2 = new ArrayList<>();
+//        runner.moveAndGetTheWay(5,3,labyrinth,list);
+        System.out.println(runner.moveAndGetTheWay(1,1,labyrinth,searcher.search(labyrinth),list,way,way2));
 
     }
 }
