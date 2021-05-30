@@ -3,20 +3,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Runner {
-    public Map<Integer, Integer> moveAndGetTheWay(int x, int y, List<List<Character>> labyrinth,Map<Integer,Integer> way) {
+    public List<Coordinates> moveAndGetTheWay(int x, int y, Labyrinth labyrinth,Map<Integer,Integer> way) {
 
-        if (labyrinth.get(y).get(x-1).equals('.')){
-            x=x-1;
-            way.put(y,x);
-            System.out.println(way);
-            moveAndGetTheWay(x, y, labyrinth,way);
-        } else if (labyrinth.get(y+1).get(x).equals('.')){
-            y=y+1;
-            way.put(y,x);
-            System.out.println(way);
-            moveAndGetTheWay(x, y, labyrinth,way);
-        }
-        return way;
+
+        return null;
     }
     public boolean checkConnection(int x, int y, Map<Integer,Integer> mapOfPreviousSteps){
         for (int key:mapOfPreviousSteps.keySet()) {

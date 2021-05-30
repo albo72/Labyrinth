@@ -1,21 +1,19 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SearherOfPossibleExits implements Searcher {
     @Override
-    public List<Coordinates> search(List<List<Character>> labyrinth) {
+    public List<Coordinates> search(Labyrinth labyrinth) {
         List<Coordinates> possibleExits = new ArrayList<>();
-        for (int i = 0; i < labyrinth.size(); i++) {
-            for (int j = 0; j < labyrinth.get(0).size(); j++) {
-                if (i == 0 || i == labyrinth.size() - 1) {
-                    if ((labyrinth.get(i).get(j)).equals('.')) {
+        for (int i = 0; i < labyrinth.getContent().size(); i++) {
+            for (int j = 0; j < labyrinth.getContent().get(0).size(); j++) {
+                if (i == 0 || i == labyrinth.getContent().size() - 1) {
+                    if ((labyrinth.getContent().get(i).get(j)).equals('.')) {
                         Coordinates coordinates = new Coordinates(j,i);
                         possibleExits.add(coordinates);
                     }
-                } else if (j == 0 || j == labyrinth.get(0).size() - 1) {
-                    if ((labyrinth.get(i).get(j)).equals('.')) {
+                } else if (j == 0 || j == labyrinth.getContent().get(0).size() - 1) {
+                    if ((labyrinth.getContent().get(i).get(j)).equals('.')) {
                         Coordinates coordinates = new Coordinates(j,i);
                         possibleExits.add(coordinates);
                     }

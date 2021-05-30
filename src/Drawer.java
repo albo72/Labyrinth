@@ -1,5 +1,5 @@
 import java.util.List;
 
-public interface Drawer {
-    void draw(List<List<Character>> labyrinth);
+interface Drawer {
+    void draw(Labyrinth labyrinth);
 }
