@@ -30,6 +30,6 @@ public class Way {
         if(content.size()==1){
             return "Путь из указанной точки:" + content;
         }
-        return "Есть несколько вариантов пути к выходу:" + content;
+        return "Есть несколько вариантов пути к выходу:\n" + content;
     }
 }
