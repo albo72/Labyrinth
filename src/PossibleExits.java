@@ -4,8 +4,8 @@ public class PossibleExits {
     private final List<Coordinates> content;
 
     public PossibleExits(Labyrinth labyrinth) {
-        SearherOfPossibleExits searher = new  SearherOfPossibleExits();
-        this.content = searher.search(labyrinth);
+        SearherOfPossibleExits searcher = new  SearherOfPossibleExits();
+        this.content = searcher.search(labyrinth);
     }
 
     public List<Coordinates> getContent() {
