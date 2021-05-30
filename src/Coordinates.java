@@ -25,6 +25,6 @@ public class Coordinates {
 
     @Override
     public String toString() {
-        return y + " " + x;
+        return "X=" + x + " " + "Y=" + y;
     }
 }
