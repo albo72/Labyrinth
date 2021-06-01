@@ -9,12 +9,12 @@ public class SearherOfPossibleExits implements Searcher {
             for (int j = 0; j < labyrinth.getContent().get(0).size(); j++) {
                 if (i == 0 || i == labyrinth.getContent().size() - 1) {
                     if ((labyrinth.getContent().get(i).get(j)).equals('.')) {
-                        Coordinates coordinates = new Coordinates(j,i);
+                        Coordinates coordinates = new Coordinates(j, i);
                         possibleExits.add(coordinates);
                     }
                 } else if (j == 0 || j == labyrinth.getContent().get(0).size() - 1) {
                     if ((labyrinth.getContent().get(i).get(j)).equals('.')) {
-                        Coordinates coordinates = new Coordinates(j,i);
+                        Coordinates coordinates = new Coordinates(j, i);
                         possibleExits.add(coordinates);
                     }
                 }

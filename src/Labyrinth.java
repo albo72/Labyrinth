@@ -7,7 +7,9 @@ public class Labyrinth {
         Reader reader = new LabyrinthReader();
         this.content = reader.read(address);
     }
+
     public List<List<Character>> getContent(){
         return content;
     }
+
 }

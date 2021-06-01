@@ -5,7 +5,10 @@ public class Main {
         drawer.draw(labyrinth);
         PossibleExits exits = new PossibleExits(labyrinth);
         System.out.println(exits);
-        Way wayToExit = new Way(labyrinth,1,1);
+        CoordinatesOfWay wayToExit = new CoordinatesOfWay(labyrinth, 1, 1);
         System.out.println(wayToExit);
+        Way showWay = new Way(labyrinth, 1,1);
+        drawer.draw(showWay.getWayFromLabyrinth());
+
     }
 }

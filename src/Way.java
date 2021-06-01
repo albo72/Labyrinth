@@ -1,34 +1,14 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 public class Way {
-    private final List<LinkedList> content;
+    private final Labyrinth wayFromLabyrinth;
+
     public Way(Labyrinth labyrinth, int x, int y) {
-        Runner runner = new Runner();
-        PossibleExits exits = new PossibleExits(labyrinth);
-        List<Coordinates> listOfPreviousCoordinates = new ArrayList<>();
-        LinkedList<Coordinates> steps = new LinkedList<>();
-        List<LinkedList> way = new ArrayList<>();
-        if (labyrinth.getContent().get(y).get(x).equals('.')) {
-            this.content = runner.moveAndGetTheWay(x, y, labyrinth, exits, listOfPreviousCoordinates, steps, way);
-        }else {
-            this.content = null;
-        }
+        Finder steps = new Wayfinder();
+        CoordinatesOfWay coordinates = new CoordinatesOfWay(labyrinth, x, y);
+        Labyrinth newLabyrinth = steps.find(labyrinth, coordinates);
+        this.wayFromLabyrinth = newLabyrinth;
     }
 
-    public List<LinkedList> getContent() {
-        return content;
-    }
-
-    @Override
-    public String toString() {
-        if(content.size()==0){
-            return "Выхода нет...";
-        }
-        if(content.size()==1){
-            return "Путь из указанной точки по координатам (x:y):\n" + content;
-        }
-        return "Есть несколько вариантов пути к выходу по координатам (x:y):\n" + content;
+    public Labyrinth getWayFromLabyrinth() {
+        return wayFromLabyrinth;
     }
 }
