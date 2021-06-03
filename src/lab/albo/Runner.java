@@ -1,4 +1,5 @@
-import java.util.Collection;
+package lab.albo;
+
 import java.util.LinkedList;
 import java.util.List;
 

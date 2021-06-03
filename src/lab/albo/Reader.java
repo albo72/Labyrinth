@@ -1,3 +1,5 @@
+package lab.albo;
+
 import java.util.List;
 
 interface Reader {

@@ -1,3 +1,5 @@
+package lab.albo;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -5,17 +7,8 @@ import java.util.List;
 public class CoordinatesOfWay {
     private final List<LinkedList> content;
 
-    public CoordinatesOfWay(Labyrinth labyrinth, int x, int y) {
-        Runner runner = new Runner();
-        PossibleExits exits = new PossibleExits(labyrinth);
-        List<Coordinates> listOfPreviousCoordinates = new ArrayList<>();
-        LinkedList<Coordinates> steps = new LinkedList<>();
-        List<LinkedList> way = new ArrayList<>();
-        if (labyrinth.getContent().get(y).get(x).equals('.')) {
-            this.content = runner.moveAndGetTheWay(new Coordinates(x,y), labyrinth, exits, listOfPreviousCoordinates, steps, way);
-        } else {
-            this.content = null;
-        }
+    public CoordinatesOfWay(List<LinkedList> content) {
+        this.content = content;
     }
 
     public List<LinkedList> getContent() {

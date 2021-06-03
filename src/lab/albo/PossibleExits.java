@@ -1,11 +1,12 @@
+package lab.albo;
+
 import java.util.List;
 
 public class PossibleExits {
     private final List<Coordinates> content;
 
-    public PossibleExits(Labyrinth labyrinth) {
-        SearherOfPossibleExits searcher = new SearherOfPossibleExits();
-        this.content = searcher.search(labyrinth);
+    public PossibleExits(List<Coordinates> content) {
+        this.content = content;
     }
 
     public List<Coordinates> getContent() {

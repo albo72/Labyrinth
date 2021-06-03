@@ -1,3 +1,4 @@
+package lab.albo;
 
 public class WayFinder implements Finder {
     @Override

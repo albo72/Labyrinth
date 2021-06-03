@@ -1,9 +1,11 @@
+package lab.albo;
+
 import javax.swing.*;
 
-public class MyButtons extends JButton {
+public class ButtonsOfLabyrinth {
     private final JButton[][] buttons;
 
-    public MyButtons(JButton[][] buttons) {
+    public ButtonsOfLabyrinth(JButton[][] buttons) {
         this.buttons = buttons;
     }
 

@@ -1,3 +1,5 @@
+package lab.albo;
+
 public class Way {
     private final Labyrinth wayFromLabyrinth;
 

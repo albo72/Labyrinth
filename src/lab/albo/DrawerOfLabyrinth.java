@@ -1,3 +1,4 @@
+package lab.albo;
 
 public class DrawerOfLabyrinth implements Drawer {
     @Override
