@@ -12,7 +12,7 @@ public class CoordinatesOfWay {
         LinkedList<Coordinates> steps = new LinkedList<>();
         List<LinkedList> way = new ArrayList<>();
         if (labyrinth.getContent().get(y).get(x).equals('.')) {
-            this.content = runner.moveAndGetTheWay(x, y, labyrinth, exits, listOfPreviousCoordinates, steps, way);
+            this.content = runner.moveAndGetTheWay(new Coordinates(x,y), labyrinth, exits, listOfPreviousCoordinates, steps, way);
         } else {
             this.content = null;
         }

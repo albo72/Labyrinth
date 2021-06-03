@@ -30,4 +30,13 @@ public class Checker {
     public boolean checkLinkageInList(LinkedList<Coordinates> way, int x, int y) {
         return way.getLast().getX() + x == way.get(way.size() - 2).getX() && way.getLast().getY() + y == way.get(way.size() - 2).getY();
     }
+    public boolean isCanGo(Labyrinth labyrinth, List<Coordinates> listOfPreviousCoordinates, int y, int i) {
+        return labyrinth.getContent().get(y).get(i).equals('.') && !checkPreviousSteps(i, y, listOfPreviousCoordinates);
+    }
+
+    public void createLastCoordinateAndAddWay(LinkedList<Coordinates> steps, List<LinkedList> way, int i, int y) {
+        steps.addLast(new Coordinates(i, y));
+        deleteStepsWithoutLinkage(steps);
+        way.add(new LinkedList(steps));
+    }
 }

@@ -1,8 +1,8 @@
-import java.util.List;
 
-public class Wayfinder implements Finder {
+public class WayFinder implements Finder {
     @Override
     public Labyrinth find(Labyrinth labyrinth, CoordinatesOfWay way) {
+        Labyrinth newLabyrinth = new Labyrinth(labyrinth.getContent());
         for (int i = 0; i < way.getContent().size(); i++) {
             for (int j = 0; j < way.getContent().get(i).size(); j++) {
                 int y = ((Coordinates) way.getContent().get(i).get(j)).getY();
@@ -11,6 +11,6 @@ public class Wayfinder implements Finder {
                 labyrinth.getContent().get(y).add(x, '*');
             }
         }
-        return labyrinth;
+        return newLabyrinth;
     }
 }
