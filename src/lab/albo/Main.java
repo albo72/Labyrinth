@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         Reader reader = new LabyrinthReader();
-        Labyrinth labyrinth = new Labyrinth(reader.read("C:\\Users\\Alex\\Desktop\\Java\\Labyrinth\\src\\4.in"));
+        Labyrinth labyrinth = new Labyrinth(reader.read("4"));
         Drawer drawer = new DrawerOfLabyrinth();
         drawer.draw(labyrinth);
         CreatorOfButtons creatorOfButtons = new CreatorOfButtons();
